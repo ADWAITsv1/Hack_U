@@ -18,17 +18,17 @@ function PurchasePoints({ onPurchase }) {
     // Call the onPurchase function if provided, otherwise show alert
     if (onPurchase) {
       onPurchase(selectedAmount);
-      alert(`Successfully purchased ${selectedAmount} points!`);
+      alert(`${selectedAmount}ポイントを購入しました！`);
       navigate('/profile');
     } else {
-      alert(`This would purchase ${selectedAmount} points in a real app.`);
+      alert(`実際のアプリでは${selectedAmount}ポイントを購入します。`);
       navigate('/profile');
     }
   };
   
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-      <h1 style={{ marginBottom: '20px' }}>Purchase Points</h1>
+      <h1 style={{ marginBottom: '20px' }}>ポイント購入</h1>
       
       <div style={{ 
         display: 'grid', 
@@ -50,7 +50,7 @@ function PurchasePoints({ onPurchase }) {
             onClick={() => setSelectedAmount(pkg.amount)}
           >
             <div style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '10px' }}>
-              {pkg.amount} Points
+              {pkg.amount} ポイント
             </div>
             <div style={{ fontSize: '1.5rem', color: '#4caf50', fontWeight: 'bold' }}>
               ${pkg.price}
@@ -65,7 +65,7 @@ function PurchasePoints({ onPurchase }) {
         borderRadius: '8px',
         boxShadow: '0 2px 5px rgba(0,0,0,0.1)'
       }}>
-        <h2 style={{ marginBottom: '20px' }}>Payment Method</h2>
+        <h2 style={{ marginBottom: '20px' }}>支払い方法</h2>
         
         <div style={{ marginBottom: '20px' }}>
           <label>
@@ -75,14 +75,14 @@ function PurchasePoints({ onPurchase }) {
               readOnly
               style={{ marginRight: '10px' }}
             />
-            Credit Card
+            クレジットカード
           </label>
         </div>
         
         <div style={{ marginBottom: '30px' }}>
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="cardNumber" style={{ display: 'block', marginBottom: '5px' }}>
-              Card Number
+              カード番号
             </label>
             <input 
               type="text" 
@@ -104,7 +104,7 @@ function PurchasePoints({ onPurchase }) {
           }}>
             <div>
               <label htmlFor="expiry" style={{ display: 'block', marginBottom: '5px' }}>
-                Expiry Date
+                有効期限
               </label>
               <input 
                 type="text" 
@@ -121,7 +121,7 @@ function PurchasePoints({ onPurchase }) {
             
             <div>
               <label htmlFor="cvv" style={{ display: 'block', marginBottom: '5px' }}>
-                CVV
+                セキュリティコード
               </label>
               <input 
                 type="text" 
@@ -149,8 +149,8 @@ function PurchasePoints({ onPurchase }) {
             justifyContent: 'space-between', 
             marginBottom: '10px' 
           }}>
-            <span>Points to Purchase:</span>
-            <span>{selectedAmount} Points</span>
+            <span>購入ポイント:</span>
+            <span>{selectedAmount} ポイント</span>
           </div>
           
           <div style={{ 
@@ -159,7 +159,7 @@ function PurchasePoints({ onPurchase }) {
             fontWeight: 'bold', 
             fontSize: '1.1rem' 
           }}>
-            <span>Price:</span>
+            <span>価格:</span>
             <span>${pointPackages.find(pkg => pkg.amount === selectedAmount)?.price}</span>
           </div>
         </div>
@@ -180,7 +180,7 @@ function PurchasePoints({ onPurchase }) {
               cursor: 'pointer'
             }}
           >
-            Cancel
+            キャンセル
           </button>
           
           <button 
@@ -195,7 +195,7 @@ function PurchasePoints({ onPurchase }) {
               fontWeight: 'bold'
             }}
           >
-            Purchase Points
+            ポイントを購入
           </button>
         </div>
       </form>

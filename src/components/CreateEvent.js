@@ -22,7 +22,7 @@ function CreateEvent({ onCreateEvent }) {
         fontSize: '28px',
         marginBottom: '20px',
         color: '#333'
-      }}>Create New Activity</h1>
+      }}>新しいアクティビティを作成</h1>
       
       <form 
         onSubmit={handleSubmit}
@@ -43,12 +43,12 @@ function CreateEvent({ onCreateEvent }) {
               color: '#555'
             }}
           >
-            Activity Name
+            アクティビティ名
           </label>
           <input 
             type="text" 
             id="name" 
-            placeholder="Activity Name" 
+            placeholder="アクティビティ名を入力" 
             value={name} 
             onChange={e => setName(e.target.value)} 
             required 
@@ -72,12 +72,12 @@ function CreateEvent({ onCreateEvent }) {
               color: '#555'
             }}
           >
-            Cost in Points
+            ポイントコスト
           </label>
           <input 
             type="number" 
             id="cost" 
-            placeholder="Cost in Points" 
+            placeholder="ポイントコストを入力" 
             value={cost} 
             onChange={e => setCost(e.target.value)} 
             required 
@@ -105,11 +105,11 @@ function CreateEvent({ onCreateEvent }) {
             width: '100%'
           }}
         >
-          Create Event
+          アクティビティを作成
         </button>
       </form>
     </div>
   );
 }
 
-export default CreateEvent; 
+export default CreateEvent;

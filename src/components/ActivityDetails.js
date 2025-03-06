@@ -9,23 +9,23 @@ function ActivityDetails({ activities, user, onJoinActivity }) {
   // Since we don't have the activities prop yet, create a sample activity
   const activity = {
     id: id,
-    name: "Sample Activity",
+    name: "サンプルアクティビティ",
     date: new Date().toISOString(),
-    location: "Sample Location",
-    organizer: "admin",
+    location: "サンプル場所",
+    organizer: "管理者",
     cost: 5,
     currentParticipants: 3,
     requiredParticipants: 10,
-    description: "This is a sample activity description."
+    description: "これはサンプルアクティビティの説明です。"
   };
   
   const handleJoin = () => {
     // If onJoinActivity prop exists, call it
     if (onJoinActivity) {
       onJoinActivity(parseInt(id), activity.cost);
-      alert("Joined activity successfully!");
+      alert("アクティビティに参加しました！");
     } else {
-      alert("Join functionality not implemented yet.");
+      alert("参加機能はまだ実装されていません。");
     }
   };
   
@@ -47,15 +47,15 @@ function ActivityDetails({ activities, user, onJoinActivity }) {
         margin: '20px 0' 
       }}>
         <div>
-          <p><strong>Date & Time:</strong> {new Date(activity.date).toLocaleString()}</p>
-          <p><strong>Location:</strong> {activity.location}</p>
-          <p><strong>Participants:</strong> {activity.currentParticipants}/{activity.requiredParticipants}</p>
-          <p><strong>Organizer:</strong> {activity.organizer}</p>
-          <p><strong>Point Cost:</strong> {activity.cost}</p>
+          <p><strong>日時:</strong> {new Date(activity.date).toLocaleString()}</p>
+          <p><strong>場所:</strong> {activity.location}</p>
+          <p><strong>参加者:</strong> {activity.currentParticipants}/{activity.requiredParticipants}</p>
+          <p><strong>主催者:</strong> {activity.organizer}</p>
+          <p><strong>ポイントコスト:</strong> {activity.cost}</p>
         </div>
         
         <div>
-          <h3>Description</h3>
+          <h3>説明</h3>
           <p>{activity.description}</p>
         </div>
       </div>
@@ -76,7 +76,7 @@ function ActivityDetails({ activities, user, onJoinActivity }) {
             cursor: 'pointer'
           }}
         >
-          Back to Activities
+          アクティビティ一覧に戻る
         </button>
         
         <button 
@@ -90,7 +90,7 @@ function ActivityDetails({ activities, user, onJoinActivity }) {
             cursor: 'pointer'
           }}
         >
-          Join Activity ({activity.cost} Points)
+          参加する ({activity.cost} ポイント)
         </button>
       </div>
     </div>

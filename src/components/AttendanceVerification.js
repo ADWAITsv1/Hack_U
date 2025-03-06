@@ -7,16 +7,16 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
   
   // Mock activities for demonstration purposes
   const activitiesToVerify = [
-    { id: 1, name: 'Soccer Match', date: '2025-03-12' },
-    { id: 2, name: 'Badminton Doubles', date: '2025-03-15' },
-    { id: 3, name: 'Barbecue Party', date: '2025-03-20' }
+    { id: 1, name: 'サッカーマッチ', date: '2025-03-12' },
+    { id: 2, name: 'バドミントンダブルス', date: '2025-03-15' },
+    { id: 3, name: 'バーベキューパーティー', date: '2025-03-20' }
   ];
   
   const handleVerify = (e) => {
     e.preventDefault();
     
     if (!scannedUserId || !selectedActivity) {
-      alert("Please provide both user ID and activity");
+      alert("ユーザーIDとアクティビティの両方を入力してください");
       return;
     }
     
@@ -24,7 +24,7 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
     if (onVerifyAttendance) {
       onVerifyAttendance(scannedUserId, parseInt(selectedActivity));
     } else {
-      alert(`Attendance verified for User ID: ${scannedUserId} at Activity: ${activitiesToVerify.find(a => a.id === parseInt(selectedActivity))?.name}`);
+      alert(`ユーザーID: ${scannedUserId} のアクティビティ: ${activitiesToVerify.find(a => a.id === parseInt(selectedActivity))?.name} への参加を確認しました`);
       setScannedUserId('');
       setSelectedActivity('');
     }
@@ -32,7 +32,7 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
   
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-      <h1 style={{ marginBottom: '30px' }}>Verify Attendance</h1>
+      <h1 style={{ marginBottom: '30px' }}>出席確認</h1>
       
       <form 
         onSubmit={handleVerify} 
@@ -45,14 +45,14 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
       >
         <div style={{ marginBottom: '20px' }}>
           <label htmlFor="userId" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
-            User ID
+            ユーザーID
           </label>
           <input 
             type="text" 
             id="userId" 
             value={scannedUserId}
             onChange={(e) => setScannedUserId(e.target.value)}
-            placeholder="Enter user ID"
+            placeholder="ユーザーIDを入力"
             style={{ 
               width: '100%', 
               padding: '10px', 
@@ -65,7 +65,7 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
         
         <div style={{ marginBottom: '30px' }}>
           <label htmlFor="activity" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
-            Activity
+            アクティビティ
           </label>
           <select 
             id="activity"
@@ -79,7 +79,7 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
             }} 
             required
           >
-            <option value="">Select an activity</option>
+            <option value="">アクティビティを選択</option>
             {activitiesToVerify.map(activity => (
               <option key={activity.id} value={activity.id}>
                 {activity.name} ({activity.date})
@@ -90,7 +90,7 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
         
         <div style={{ marginTop: '20px' }}>
           <p style={{ marginBottom: '20px', fontStyle: 'italic', color: '#666' }}>
-            In a real application, this would scan a QR code to verify attendance.
+            実際のアプリケーションでは、QRコードをスキャンして出席を確認します。
           </p>
           
           <button 
@@ -107,7 +107,7 @@ function AttendanceVerification({ user, onVerifyAttendance }) {
               fontWeight: '500'
             }}
           >
-            Verify Attendance
+            出席を確認
           </button>
         </div>
       </form>

@@ -7,9 +7,9 @@ function Home({ user, onJoinEvent }) {
   useEffect(() => {
     // Simulate fetching activities
     setActivities([
-      { id: 1, name: 'Soccer Match', cost: 5 },
-      { id: 2, name: 'Badminton Doubles', cost: 3 },
-      { id: 3, name: 'Barbecue Party', cost: 10 }
+      { id: 1, name: 'サッカーマッチ', cost: 5 },
+      { id: 2, name: 'バドミントンダブルス', cost: 3 },
+      { id: 3, name: 'バーベキューパーティー', cost: 10 }
     ]);
   }, []);
 
@@ -17,7 +17,7 @@ function Home({ user, onJoinEvent }) {
     if (user.points >= activity.cost) {
       onJoinEvent(activity.id, activity.cost);
     } else {
-      alert("Not enough points to join this activity.");
+      alert("このアクティビティに参加するためのポイントが足りません。");
     }
   };
 
@@ -31,7 +31,7 @@ function Home({ user, onJoinEvent }) {
         fontSize: '28px',
         marginBottom: '20px',
         color: '#333'
-      }}>Available Activities</h1>
+      }}>利用可能なアクティビティ</h1>
       
       <div style={{
         backgroundColor: 'white',
@@ -54,7 +54,7 @@ function Home({ user, onJoinEvent }) {
               borderBottom: '1px solid #eee'
             }}>
               <div style={{ fontWeight: '500' }}>
-                {activity.name} - <span style={{ color: '#4caf50' }}>Cost: {activity.cost} Points</span>
+                {activity.name} - <span style={{ color: '#4caf50' }}>コスト: {activity.cost} ポイント</span>
               </div>
               <button 
                 onClick={() => handleJoin(activity)}
@@ -68,7 +68,7 @@ function Home({ user, onJoinEvent }) {
                   fontWeight: '500'
                 }}
               >
-                Join
+                参加する
               </button>
             </li>
           ))}
