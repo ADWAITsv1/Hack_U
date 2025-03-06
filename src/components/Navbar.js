@@ -1,8 +1,8 @@
-// src/components/Navbar.js
+// Updated Navbar.js with logout functionality
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ userPoints }) => {
+const Navbar = ({ userPoints, onLogout }) => {
   return (
     <nav style={{ 
       background: '#333', 
@@ -13,7 +13,7 @@ const Navbar = ({ userPoints }) => {
     }}>
       <div>
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.2rem' }}>
-          Activity Matching
+          アクティビティマッチャー
         </Link>
       </div>
       
@@ -43,6 +43,20 @@ const Navbar = ({ userPoints }) => {
         }}>
           ポイント購入
         </Link>
+        <button
+          onClick={onLogout}
+          style={{
+            backgroundColor: '#f44336',
+            color: 'white',
+            border: 'none',
+            padding: '5px 10px',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '0.9rem'
+          }}
+        >
+          ログアウト
+        </button>
       </div>
     </nav>
   );
