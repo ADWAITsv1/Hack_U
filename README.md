@@ -146,11 +146,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgements
-
-- Special thanks to all contributors
-- Inspired by the need to solve the problem of finding activity partners
-- Built with modern web technologies
-=======
-# Hack_U
->>>>>>> c57e1854becdd41ec3296735e2cf8e0bab5da5c3
