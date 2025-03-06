@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Activity Matching Platform
 
 The Activity Matching Platform is a web application designed to connect people who want to engage in group activities like sports, dining, or social events. It solves the common problem of finding companions for activities that require multiple participants, while using a point-based system to ensure commitment.
@@ -153,4 +153,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Built with modern web technologies
 =======
 
->>>>>>> c57e1854becdd41ec3296735e2cf8e0bab5da5c3
