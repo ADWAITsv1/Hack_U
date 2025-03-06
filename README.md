@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# Activity Matching Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Activity Matching Platform is a web application designed to connect people who want to engage in group activities like sports, dining, or social events. It solves the common problem of finding companions for activities that require multiple participants, while using a point-based system to ensure commitment.
 
-## Available Scripts
+## Core Features
 
-In the project directory, you can run:
+### Activity Management
+- Browse available activities by category
+- Create new activities as an organizer
+- Join activities as a participant
+- View detailed activity information
 
-### `npm start`
+### Point-Based Commitment System
+- Users receive initial points upon registration
+- Points are spent to join activities
+- Points are refunded upon verified attendance
+- This prevents no-shows and ensures commitment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Attendance Verification
+- QR code-based attendance verification
+- Organizers can scan participants' QR codes
+- Points are automatically refunded upon verification
+- Creates accountability and rewards follow-through
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Management
+- User profiles with point balances
+- Purchase more points if needed
+- Track joined and created activities
+- Personalized QR code for verification
 
-### `npm test`
+## Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- React.js
+- React Router for navigation
+- Modern UI with responsive design
+- QR code generation and scanning capabilities
 
-### `npm run build`
+### Backend (Future Implementation)
+- FastAPI backend (planned)
+- Database for user data and activities
+- Authentication and authorization
+- Payment processing for point purchases
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js and npm installed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/activity-platform.git
+   cd activity-platform
+   ```
 
-### `npm run eject`
+2. Install dependencies
+   ```
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server
+   ```
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open your browser and navigate to `http://localhost:3000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage Examples
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Creating an Activity
+1. Navigate to "Create Activity" page
+2. Fill in activity details (name, description, date, location, etc.)
+3. Set the point cost for participation
+4. Submit the form to create the activity
 
-## Learn More
+### Joining an Activity
+1. Browse available activities on the home page
+2. Click "Join" on an activity that interests you
+3. Points will be deducted from your balance
+4. Attend the activity and get your QR code scanned to receive a refund
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Verifying Attendance
+1. Organizers navigate to "Verify Attendance" page
+2. Scan participants' QR codes or enter their ID manually
+3. Select the relevant activity
+4. Confirm attendance which triggers point refund
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Purchasing Points
+1. Navigate to "Buy Points" page
+2. Select desired point package
+3. Complete payment information
+4. Points are added to user's balance
 
-### Code Splitting
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+activity-platform/
+│
+├── public/                  # Public assets
+│
+└── src/                     # Source files
+    ├── components/          # React components
+    │   ├── Home.js          # Activity listing page
+    │   ├── CreateEvent.js   # Activity creation form
+    │   ├── Profile.js       # User profile with QR code
+    │   ├── Navbar.js        # Navigation component
+    │   ├── ActivityDetails.js # Detailed activity view
+    │   ├── PurchasePoints.js # Point purchasing interface
+    │   └── AttendanceVerification.js # QR code scanner
+    │
+    ├── App.js               # Main application component
+    ├── index.js             # Application entry point
+    └── styles.css           # Global styles
+```
 
-### Analyzing the Bundle Size
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **User Authentication**
+   - Registration and login system
+   - Social login options
+   - User roles (admin, organizer, participant)
 
-### Making a Progressive Web App
+2. **Advanced Activity Features**
+   - Categories and tags for better filtering
+   - Recurring activities
+   - Rating and review system
+   - Activity recommendations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. **Communication Tools**
+   - In-app messaging between participants
+   - Activity-specific discussion boards
+   - Notifications for upcoming activities
 
-### Advanced Configuration
+4. **Mobile App**
+   - Native mobile experience
+   - Push notifications
+   - Location-based activity suggestions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+
+- Special thanks to all contributors
+- Inspired by the need to solve the problem of finding activity partners
+- Built with modern web technologies
